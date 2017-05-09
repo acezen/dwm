@@ -285,7 +285,9 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
-	[EnterNotify] = enternotify,
+	#if 0
+	[EnterNotify] = enternotify,   /* disable focus follows mouse behaviour */
+	#endif
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,

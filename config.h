@@ -105,11 +105,11 @@ static Key keys[] = {
 //	TAGKEYS(                        XK_8,                      7)
 //	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = partscreenshot } },
 	{ 0,                            XK_Print,  spawn,          {.v = fullscreenshot } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn           {.v = partscreenshot } },
-	{ 0,            XF86AudioRaisesVolume,     spawn,          {.v = volumeup } },
-	{ 0,            XF86AudioLowerVolume,      spawn,          {.v = volumedown } },
-	{ 0,                    XF86AudioMute,     spawn,          {.v = volumemute } },
+	{ 0,                       0x1008ff13,     spawn,          {.v = volumeup } },
+	{ 0,                       0x1008ff11,     spawn,          {.v = volumedown } },
+	{ 0,                       0x1008ff12,     spawn,          {.v = volumemute } },
 };
 
 /* button definitions */

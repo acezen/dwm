@@ -1,6 +1,6 @@
 #/bin/bash
 
-habak -ms ~/.dwm/wallpaper.jpg
+feh --bg-center ~/.dwm/wallpaper.jpg
 wmname LG3D
 
 # Restart dwm without logging out or closing programs

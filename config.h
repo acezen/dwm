@@ -16,10 +16,11 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_yellow[]      = "#cdbe70";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_yellow},
 };
 
 /* tagging */
@@ -68,8 +69,8 @@ static const char *fmcmd[] = { "pcmanfm", NULL };
 static const char *killdwm[]  = { "killall", "xinit" };
 static const char *lockdwm[] = { "slock", NULL };
 static const char *wbcmd[] = { "firefox", NULL };
-static const char *fullscreenshot[] = { "scrot", "~/Pictures/screenshot/shot_%Y%m%d_%H.png" };
-static const char *partscreenshot[] = { "scrot", "-s", "~/Pictures/screenshot/shot_%Y%m%d_%H.png" };
+static const char *select_shot[] = { "sel_shot.sh" };
+static const char *full_shot[] = { "full_shot.sh" };
 static const char *volumedown[] = { "amixer", "set", "Master", "5%-", NULL };
 static const char *volumeup[]   = { "amixer", "set", "Master", "5%+", NULL };
 static const char *volumemute[] = { "amixer", "set", "Master", "toggle", NULL };
@@ -113,8 +114,8 @@ static Key keys[] = {
 //	TAGKEYS(                        XK_8,                      7)
 //	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = partscreenshot } },
-	{ 0,                            XK_Print,  spawn,          {.v = fullscreenshot } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = select_shot } },
+	{ 0,                            XK_Print,  spawn,          {.v = full_shot } },
 	{ 0,                       0x1008ff13,     spawn,          {.v = volumeup } },
 	{ 0,                       0x1008ff11,     spawn,          {.v = volumedown } },
 	{ 0,                       0x1008ff12,     spawn,          {.v = volumemute } },
